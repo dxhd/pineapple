@@ -1,0 +1,29 @@
+#заполнение массива
+N=int(input('Введите количество элементов массива: '))
+while not 2<=N<=10000:
+    print('Количество должно лежать в интервале от 2 до 10000 включительно.')
+    N=int(input('Введите количество элементов массива: '))
+str1=input('Введите массив: ')
+s=[]
+s=str1.split(' ')
+while len(s)!=N:
+    print('Количество элементов массива должно соответствовать заданному.')
+    str1=input('Введите массив: ')
+    s=str1.split(' ')
+#сортировка
+troiki=[]
+vse=[]
+for i in s:
+    if int(i)%3==0:
+        troiki.append(int(i))
+    else:
+        vse.append(int(i))
+troiki.sort()
+vse.sort()
+sorted=troiki+vse
+str0=''
+for i in sorted:
+    i=str(i)+' '
+    str0+=i
+str0.strip()
+print(str0)
